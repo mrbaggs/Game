@@ -4,6 +4,7 @@
   "description": "Text based KCL game",
   "main": "index.js",
   "dependencies": {
+    "@material-ui/core": "^3.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
