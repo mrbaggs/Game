@@ -1,4 +1,3 @@
-export const test = thing => ({
-    type: 'TEST_THE_THING',
-    thing
-})
+export const test = () => ({
+    type: 'TEST_THE_THING'
+});
