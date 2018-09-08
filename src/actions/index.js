@@ -1,3 +1,4 @@
-export const test = () => ({
-    type: 'TEST_THE_THING'
+export const updateRoom = (newRoom) => ({
+    type: 'UPDATE_ROOM',
+    newRoom
 });

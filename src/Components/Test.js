@@ -1,29 +1,50 @@
 import Button from "@material-ui/core/Button";
+import RoomInfo  from "./RoomInfo";
+import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 const React = require("react");
 
-// class Test2 extends React.Component {
-//     render() {
-//         console.log(this.props)
-//         const test = this.props.test
-//         console.log(test)
-//         return (
-//             <div>
-//                 why you no work {props.test}
-//             </div>
-//         )
-//     }
-// };
+const allStyle = {
+    'display': 'flex',
+    'flex-direction': 'row',
+    'width': '100%',
+    'height': '100%'
+};
+
+const mainStyle = {
+    'width': '80%'
+}
+
+const sideStyle = {
+    'width': '20%'
+}
 
 const Test = ({
-    test,
-    toggleTodo
+    room,
+    rooms,
+    updateRoom
 }) => {
-    console.log(test)
     return (
-        <div>
-            <Button variant="contained" color="primary" onClick={() => toggleTodo()}>
-                {test.toString()}
-            </Button>
+        <div style={allStyle}>
+            <div style={mainStyle}>
+                <RoomInfo room={room} />
+                <div className="room-actions">
+                    Room actions
+                </div>
+            </div>
+            <div style={sideStyle}>
+                <div className="items-list">
+                    Objects
+                </div>
+                <div className="directons">
+                    {Object.keys(room.directions).map((e) => {
+                        return (
+                            <Button variant="contained" color="primary" onClick={() => updateRoom(rooms[room.directions[e].newRoom])}>
+                                {room.directions[e].direction}
+                            </Button>
+                        )
+                    })}
+                </div>
+            </div>
         </div>
     )
 }

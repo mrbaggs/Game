@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux';
-import tests from './tests';
+import rooms from './rooms';
+import currentRoom from './currentRoom';
 
 export default combineReducers({
-    tests,
+    rooms,
+    currentRoom
 })

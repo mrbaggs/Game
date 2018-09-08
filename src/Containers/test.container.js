@@ -1,15 +1,18 @@
+import React from 'react'
 import {connect} from 'react-redux';
-import {test} from '../actions';
+import {updateRoom} from '../actions';
 import Test from'../Components/Test';
 
+
 const mapStateToProps = state => ({
-    test: state.tests.test1
+    room: state.currentRoom.room,
+    rooms: state.rooms,
 })
 
-const mapDispatchToProps = dispatch => ({
-    toggleTodo: () => {
-        console.log("test")
-        dispatch(test());
+const mapDispatchToProps = (dispatch) => ({
+    updateRoom: (room) => {
+        console.log(room);
+        dispatch(updateRoom(room));
         }
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Test);
